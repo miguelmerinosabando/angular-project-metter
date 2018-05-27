@@ -8,20 +8,29 @@ import { AppRoutingModule } from './/app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProyectosComponent } from './proyectos/proyectos.component';
+import { ProyectosEditComponent } from './proyectos/proyectos-edit/proyectos-edit.component';
+import { ProyectosListComponent } from './proyectos/proyectos-list/proyectos-list.component';
+import { ProyectoService } from './proyectos/shared/proyecto.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProyectosComponent,
+    ProyectosEditComponent,
+    ProyectosListComponent
   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  providers: [ ProyectoService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

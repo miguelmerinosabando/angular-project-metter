@@ -1,17 +1,20 @@
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark black" [containerInside]="true">
       <logo>
-          <a class="logo navbar-brand" href="#"><strong>Navbar</strong></a>
+          <a class="logo navbar-brand" routerLink="dashboard"><i class="fa fa-briefcase" aria-hidden="true"></i><strong> Project Metter</strong></a>
       </logo>
       <links>
           <ul class="navbar-nav mr-auto">
-              <li class="nav-item active waves-light" mdbWavesEffect>
-                  <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+              <li class="nav-item waves-light" mdbWavesEffect>
+                  <a class="nav-link" routerLink="proyectos" >Proyectos</a>
               </li>
               <li class="nav-item waves-light" mdbWavesEffect>
-                  <a class="nav-link">Link</a>
+                  <a class="nav-link">Empleados</a>
               </li>
               <li class="nav-item waves-light" mdbWavesEffect>
-                  <a class="nav-link">Profile</a>
+                <a class="nav-link">Tareas</a>
+              </li>
+              <li class="nav-item waves-light" mdbWavesEffect>
+                <a class="nav-link">Incidencias</a>
               </li>
           </ul>
       </links>
