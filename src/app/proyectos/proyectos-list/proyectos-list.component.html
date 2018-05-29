@@ -3,3 +3,39 @@
       <span>{{proyecto.proyectoId}}</span> {{proyecto.nombre}}
   </li>
 </ul>
+
+<!--Table-->
+<table class="table">
+
+  <!--Table head-->
+  <thead class="mdb-color darken-3">
+      <tr class="text-white">
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Empresa</th>
+          <th>Presupuesto</th>
+      </tr>
+  </thead>
+  <!--Table head-->
+
+  <!--Table body-->
+  <tbody>
+      <tr *ngFor="let proyecto of proyectos">
+          <th scope="row">{{proyecto.proyectoId}}</th>
+          <td>{{proyecto.nombre}}</td>
+          <td>{{proyecto.empresa}}</td>
+          <td>{{proyecto.presupuesto}}</td>
+          <td><button class="btn btn-primary waves-light" type="button" (click)="test.toggle()" mdbWavesEffect>
+            Toggle collapse
+        </button>
+        
+        <div class="" [mdbCollapse]="isCollapsed" #test="bs-collapse">
+            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
+        </div></td>
+      </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->
+                                  
+             
