@@ -13,7 +13,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ProyectoService {
-  private proyectosUrl = 'http://localhost:55264/api/Proyectoes'; // URL API Proyectos
+  private proyectosUrl = 'http://10.211.55.4:55264/api/Proyectoes'; // URL API Proyectos
 
   constructor( private http: HttpClient ) { }
 
