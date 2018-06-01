@@ -1,3 +1,5 @@
+import { Empleado } from "../../empleados/shared/empleado.model";
+
 export class Proyecto {
     proyectoId : number;
     nombre :string;
@@ -6,5 +8,5 @@ export class Proyecto {
     tecnologias: string;
     fechaInicio : string;
     estadoActual : string;
-    empleados: any;
+    empleados: Empleado[];
 }

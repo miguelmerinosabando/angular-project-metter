@@ -4,6 +4,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 import { AppRoutingModule } from './/app-routing.module';
+import { FormsModule } from '@angular/forms';
 //Importamos componentes
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -13,6 +14,10 @@ import { ProyectosEditComponent } from './proyectos/proyectos-edit/proyectos-edi
 import { ProyectosListComponent } from './proyectos/proyectos-list/proyectos-list.component';
 import { ProyectoService } from './proyectos/shared/proyecto.service';
 import { HttpClientModule } from '@angular/common/http';
+import { EmpleadosComponent } from './empleados/empleados.component';
+import { TareasComponent } from './tareas/tareas.component';
+import { IncidenciasComponent } from './incidencias/incidencias.component';
+import { ProyectoDetailComponent } from './proyectos/proyecto-detail/proyecto-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +26,15 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     ProyectosComponent,
     ProyectosEditComponent,
-    ProyectosListComponent
+    ProyectosListComponent,
+    EmpleadosComponent,
+    TareasComponent,
+    IncidenciasComponent,
+    ProyectoDetailComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
     HttpClientModule

@@ -1,11 +1,5 @@
-<ul>
-  <li *ngFor="let proyecto of proyectos">
-      <span>{{proyecto.proyectoId}}</span> {{proyecto.nombre}}
-  </li>
-</ul>
-
 <!--Table-->
-<table class="table">
+<table class="table text-justify">      
 
   <!--Table head-->
   <thead class="mdb-color darken-3">
@@ -14,6 +8,12 @@
           <th>Nombre</th>
           <th>Empresa</th>
           <th>Presupuesto</th>
+          <th>Tecnologias</th>
+          <th>F.Inicio</th>
+          <th>Estado Actual</th>
+          <!--<th>Empleados <i class="fa fa-id-card"></i></th>-->
+          <th></th>
+          <th></th>
       </tr>
   </thead>
   <!--Table head-->
@@ -21,17 +21,32 @@
   <!--Table body-->
   <tbody>
       <tr *ngFor="let proyecto of proyectos">
-          <th scope="row">{{proyecto.proyectoId}}</th>
-          <td>{{proyecto.nombre}}</td>
-          <td>{{proyecto.empresa}}</td>
-          <td>{{proyecto.presupuesto}}</td>
-          <td><button class="btn btn-primary waves-light" type="button" (click)="test.toggle()" mdbWavesEffect>
-            Toggle collapse
-        </button>
-        
-        <div class="" [mdbCollapse]="isCollapsed" #test="bs-collapse">
-            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
-        </div></td>
+          <th  class="align-middle" scope="row">{{proyecto.proyectoId}}</th>
+          <td  class="align-middle"><a routerLink="/proyectodetail/{{proyecto.proyectoId}}">{{proyecto.nombre}}</a></td>
+          <td  class="align-middle">{{proyecto.empresa}}</td>
+          <td  class="align-middle">{{proyecto.presupuesto}}</td>
+          <td  class="align-middle">{{proyecto.tecnologias}}</td>
+          <td  class="align-middle">{{proyecto.fechaInicio}}</td>
+          <td  class="align-middle">{{proyecto.estadoActual}}</td>
+          <!--
+              <td>
+              <button class="btn btn-primary waves-light" type="button" (click)="test.toggle()" mdbWavesEffect>
+                <i class="fa fa-id-card"></i>
+              </button>
+              <div [mdbCollapse]="isCollapsed" #test="bs-collapse">
+                <span *ngFor="let empleado of proyecto.empleados">
+                    <p>{{empleado.nombre}}</p>
+                </span>
+              </div>
+          </td>
+        -->
+                <td  class="align-middle">
+                    <a><i class="fa fa-trash fa-2x"  (click)="delete(proyecto)"></i></a>
+                </td>
+                <td class="align-middle">
+                    <i class="fa fa-pencil-square fa-2x"></i>
+                </td>
+            
       </tr>
   </tbody>
   <!--Table body-->

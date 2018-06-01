@@ -21,4 +21,15 @@ export class ProyectoService {
   getProyectos (): Observable<Proyecto[]> {
     return this.http.get<Proyecto[]>(this.proyectosUrl);
   }
+
+  getProyecto(id: number): Observable<Proyecto> {
+    const url = `${this.proyectosUrl}/${id}`;
+    return this.http.get<Proyecto>(url);
+  }
+
+  deleteProyecto (proyecto: Proyecto | number): Observable<Proyecto> {
+    const id = typeof proyecto === 'number' ? proyecto : proyecto.proyectoId;
+    const url = `${this.proyectosUrl}/${id}`;
+    return this.http.delete<Proyecto>(url, httpOptions);
+  }
 }
